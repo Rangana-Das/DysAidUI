@@ -1,3 +1,5 @@
+#Word Segmentation NN
+
 import cv2
 import numpy as np
 

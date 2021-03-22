@@ -1,3 +1,5 @@
+#Word Segmentation NN
+
 import argparse
 from collections import namedtuple
 

@@ -1,3 +1,5 @@
+#Word Segmentation NOT NN
+
 import math
 import cv2
 import numpy as np

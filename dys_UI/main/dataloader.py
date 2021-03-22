@@ -1,3 +1,5 @@
+#Word Segmentation NN
+
 from collections import namedtuple
 
 import cv2
