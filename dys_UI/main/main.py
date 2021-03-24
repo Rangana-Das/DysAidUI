@@ -1,13 +1,13 @@
 import argparse
 import json
 
-import cv2
+from cv2 import cv2
 import editdistance
 from path import Path
 
-from DataLoaderIAM import DataLoaderIAM, Batch
+from .DataLoaderIAM import DataLoaderIAM, Batch
 from Model import Model, DecoderType
-from SamplePreprocessor import preprocess
+from .SamplePreprocessor import preprocess
 
 from infer import segment
 import os
@@ -24,6 +24,10 @@ class FilePaths:
     fnInfer = '../data/pragatitest.JPG'
     fnCorpus = '../data/corpus.txt'
 
+#test for integration
+def test_integration():
+    text=["This is a test","Should not be printed"]
+    return text[0]
 
 def write_summary(charErrorRates, wordAccuracies):
     with open(FilePaths.fnSummary, 'w') as f:
@@ -151,7 +155,8 @@ def infer(model, fnImg):
     s=spelling()
     s.correct()
     corrected=s.punct()
-    print(corrected[0])
+    return corrected[0]
+    #print(corrected[0])
     #outF1 = open("../data/corrected.txt", "w+")
     #outF1.write(corrected[0])
     #outF1.close()

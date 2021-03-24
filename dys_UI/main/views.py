@@ -1,10 +1,25 @@
 #django
 
 from django.shortcuts import render,redirect
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm,FileForm
+from .models import File
+from . import main
 
 def home(request):
-    return render(request, 'home.html')
+    saved=False
+    if request.method=="POST":
+        MyFileForm=FileForm(request.POST,request.FILES)
+        if MyFileForm.is_valid():
+            files=File()
+            files.picture=MyFileForm.cleaned_data["picture"]
+            files.save()
+            saved=True
+            #model = Model(open(FilePaths.fnCharList).read(), decoderType, mustRestore=True, dump=args.dump)
+            #result= main.infer(model,files.picture)
+            result=main.test_integration()
+    else:
+        MyFileForm=FileForm()
+    return render(request, 'home.html',locals())
     
 def login(request):
     return render(request,'login.html')
