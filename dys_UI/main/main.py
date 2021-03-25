@@ -5,9 +5,9 @@ from cv2 import cv2
 import editdistance
 from path import Path
 
-from .DataLoaderIAM import DataLoaderIAM, Batch
+from DataLoaderIAM import DataLoaderIAM, Batch
 from Model import Model, DecoderType
-from .SamplePreprocessor import preprocess
+from SamplePreprocessor import preprocess
 
 from infer import segment
 import os
@@ -19,8 +19,8 @@ from Spelling import spelling
 
 class FilePaths:
     "filenames and paths to data"
-    fnCharList = '../model/charList.txt'
-    fnSummary = '../model/summary.json'
+    fnCharList = './model/charList.txt'
+    fnSummary = './model/summary.json'
     fnInfer = '../data/pragatitest.JPG'
     fnCorpus = '../data/corpus.txt'
 
