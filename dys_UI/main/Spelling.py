@@ -9,7 +9,7 @@ class spelling:
 
 	def correct(self):
 		sp = SpellCorrectionModel(language='en')
-		sp.load('../en_large.pkl')
+		sp.load('en_large.pkl')
 		f=open("../data/recog.txt",'r')
 		self.text=(sp.spell_correct(f.readline())['spell_corrected_text'])
 		print(self.text)

@@ -5,17 +5,17 @@ from cv2 import cv2
 import editdistance
 from path import Path
 
-from DataLoaderIAM import DataLoaderIAM, Batch
-from Model import Model, DecoderType
-from SamplePreprocessor import preprocess
+from .DataLoaderIAM import DataLoaderIAM, Batch
+from .Model import Model, DecoderType
+from .SamplePreprocessor import preprocess
 
-from infer import segment
+from .infer import segment
 import os
 
-from WordSegmentation import wordSegmentation
-from WordSegmentation import prepareImg
+from .WordSegmentation import wordSegmentation
+from .WordSegmentation import prepareImg
 
-from Spelling import spelling
+from .Spelling import spelling
 
 class FilePaths:
     "filenames and paths to data"
@@ -204,11 +204,12 @@ def main():
         elif args.validate:
             model = Model(loader.charList, decoderType, mustRestore=True)
             validate(model, loader)
-
+        result = ''
     # infer text on test image
     else:
         model = Model(open(FilePaths.fnCharList).read(), decoderType, mustRestore=True, dump=args.dump)
-        infer(model, FilePaths.fnInfer)
+        result=infer(model, FilePaths.fnInfer)
+    return result
 
 
 if __name__ == '__main__':

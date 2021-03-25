@@ -5,10 +5,10 @@ import argparse
 import torch
 from path import Path
 
-from dataloader import DataLoaderImgFile
-from eval import evaluate
-from net import WordDetectorNet
-from visualization import FetchImages
+from .dataloader import DataLoaderImgFile
+from .eval import evaluate
+from .net import WordDetectorNet
+from .visualization import FetchImages
 import cv2
 
 

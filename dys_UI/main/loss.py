@@ -3,7 +3,7 @@
 import torch
 import torch.nn.functional as F
 
-from coding import MapOrdering
+from .coding import MapOrdering
 
 
 def compute_loss(y, gt_map):

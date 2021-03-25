@@ -8,7 +8,7 @@ import lmdb
 import numpy as np
 from path import Path
 
-from SamplePreprocessor import preprocess
+from .SamplePreprocessor import preprocess
 
 
 class Sample:

@@ -5,8 +5,8 @@ from collections import defaultdict
 import numpy as np
 from sklearn.cluster import DBSCAN
 
-from aabb import AABB
-from iou import compute_dist_mat
+from .aabb import AABB
+from .iou import compute_dist_mat
 
 
 def cluster_aabbs(aabbs):

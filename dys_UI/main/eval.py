@@ -7,16 +7,16 @@ import numpy as np
 import torch
 from path import Path
 
-from aabb import AABB
-from aabb_clustering import cluster_aabbs
-from coding import decode, fg_by_cc
-from dataloader import DataLoaderIAM
-from dataset import DatasetIAM, DatasetIAMSplit
-from iou import compute_dist_mat_2
-from loss import compute_loss
-from net import WordDetectorNet
-from utils import compute_scale_down
-from visualization import FetchImages
+from .aabb import AABB
+from .aabb_clustering import cluster_aabbs
+from .coding import decode, fg_by_cc
+from .dataloader import DataLoaderIAM
+from .dataset import DatasetIAM, DatasetIAMSplit
+from .iou import compute_dist_mat_2
+from .loss import compute_loss
+from .net import WordDetectorNet
+from .utils import compute_scale_down
+from .visualization import FetchImages
 
 EvaluateRes = namedtuple('EvaluateRes', 'batch_imgs,batch_aabbs,loss,metrics')
 

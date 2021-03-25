@@ -7,12 +7,12 @@ import torch
 from path import Path
 from torch.utils.tensorboard import SummaryWriter
 
-from dataloader import DataLoaderIAM
-from dataset import DatasetIAM, DatasetIAMSplit
-from eval import evaluate
-from loss import compute_loss
-from net import WordDetectorNet
-from visualization import visualize
+from .dataloader import DataLoaderIAM
+from .dataset import DatasetIAM, DatasetIAMSplit
+from .eval import evaluate
+from .loss import compute_loss
+from .net import WordDetectorNet
+from .visualization import visualize
 
 global_step = 0
 

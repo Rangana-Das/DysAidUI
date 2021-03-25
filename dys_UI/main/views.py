@@ -14,9 +14,8 @@ def home(request):
             files.picture=MyFileForm.cleaned_data["picture"]
             files.save()
             saved=True
-            #model = Model(open(FilePaths.fnCharList).read(), decoderType, mustRestore=True, dump=args.dump)
-            #result= main.infer(model,files.picture)
-            result=main.test_integration()
+            result= main.main()
+            #result=main.test_integration()
     else:
         MyFileForm=FileForm()
     return render(request, 'home.html',locals())

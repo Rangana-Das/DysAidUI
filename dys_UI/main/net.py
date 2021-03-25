@@ -3,9 +3,9 @@
 import torch
 import torch.nn.functional as F
 
-from resnet import resnet18
-from coding import MapOrdering
-from utils import compute_scale_down
+from .resnet import resnet18
+from .coding import MapOrdering
+from .utils import compute_scale_down
 
 
 class UpscaleAndConcatLayer(torch.nn.Module):
